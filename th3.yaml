@@ -1,0 +1,19 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: thread3
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: thread3
+  template:
+    metadata:
+      labels:
+        app: thread3
+    spec:
+      containers:
+        - name: thread3
+          image: jeetp2001/th3
+          

@@ -1,0 +1,22 @@
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: psqldb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: psqldb
+  template:
+    metadata:
+      labels:
+        app: psqldb
+    spec:
+      containers:
+        - name: psqldb
+          image: postgres
+          env:
+          - name: POSTGRES_PASSWORD
+            value: "2908"
